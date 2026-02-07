@@ -21,15 +21,6 @@ A dark theme for [Obsidian](https://obsidian.md) based on the [Eldritch](https:/
 
 ## Installation
 
-### From Obsidian Community Themes
-
-1. Open Obsidian Settings
-2. Go to **Appearance** > **Themes**
-3. Click **Manage** and search for "Eldritch"
-4. Click **Install and use**
-
-### Manual Installation
-
 1. Download `theme.css` and `manifest.json`
 2. Create a folder called `Eldritch` in your vault's `.obsidian/themes/` directory
 3. Place both files inside the folder

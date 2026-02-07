@@ -1,0 +1,597 @@
+/* Eldritch Theme for Obsidian */
+/* Based on Night Owl structure, using Eldritch color palette */
+/* Inspired by Lovecraftian horror - deep oceanic tones */
+
+.theme-dark {
+	/* === ELDRITCH COLOR PALETTE === */
+
+	/* Primary Colors */
+	--eldritch-bg-primary: #212337;
+	--eldritch-bg-secondary: #323449;
+	--eldritch-bg-tertiary: #1a1c2c;
+	--eldritch-bg-tab-active: #3a3d50;
+	--eldritch-bg-tab-inactive: #1d1f30;
+
+	/* Text Colors */
+	--eldritch-text-primary: #ebfafa;
+	--eldritch-text-secondary: #7081d0;
+	--eldritch-text-muted: #565b7a;
+	--eldritch-text-accent: #04d1f9;
+	--eldritch-text-bright: #ffffff;
+
+	/* Accent Colors */
+	--eldritch-accent-purple: #a48cf2;
+	--eldritch-accent-cyan: #04d1f9;
+	--eldritch-accent-green: #37f499;
+	--eldritch-accent-yellow: #f1fc79;
+	--eldritch-accent-orange: #f7c67f;
+	--eldritch-accent-red: #f16c75;
+	--eldritch-accent-pink: #f265b5;
+
+	/* UI Element Colors */
+	--eldritch-border: #2a2d40;
+	--eldritch-border-secondary: #3a3d50;
+	--eldritch-selection: #3a3d54;
+	--eldritch-highlight: #7081d079;
+	--eldritch-button-bg: #a48cf2cc;
+	--eldritch-button-hover: #a48cf2;
+
+	/* === OBSIDIAN CSS VARIABLES MAPPING === */
+
+	/* Base Colors */
+	--color-base-00: #212337;
+	--color-base-05: #323449;
+	--color-base-10: #1a1c2c;
+	--color-base-20: #2a2d40;
+	--color-base-25: #3a3d54;
+	--color-base-30: #3a3d50;
+	--color-base-35: #454861;
+	--color-base-40: #565b7a;
+	--color-base-50: #7081d0;
+	--color-base-60: #9aa5d8;
+	--color-base-70: #ebfafa;
+	--color-base-100: #ffffff;
+
+	/* Accent Colors */
+	--color-accent: #04d1f9;
+	--color-accent-1: #a48cf2;
+	--color-accent-2: #37f499;
+
+	/* Background Colors */
+	--background-primary: var(--eldritch-bg-primary);
+	--background-primary-alt: var(--eldritch-bg-secondary);
+	--background-secondary: var(--eldritch-bg-tertiary);
+	--background-secondary-alt: var(--eldritch-bg-tab-active);
+	--background-modifier-border: var(--eldritch-border);
+	--background-modifier-border-hover: var(--eldritch-border-secondary);
+	--background-modifier-border-focus: var(--eldritch-accent-cyan);
+	--background-modifier-error-rgb: 241, 108, 117;
+	--background-modifier-error: rgba(var(--background-modifier-error-rgb), 0.3);
+	--background-modifier-error-hover: rgba(var(--background-modifier-error-rgb), 0.4);
+	--background-modifier-success-rgb: 55, 244, 153;
+	--background-modifier-success: rgba(var(--background-modifier-success-rgb), 0.3);
+	--background-modifier-message: var(--eldritch-bg-secondary);
+
+	/* Text Colors */
+	--text-normal: var(--eldritch-text-primary);
+	--text-muted: var(--eldritch-text-secondary);
+	--text-faint: var(--eldritch-text-muted);
+	--text-accent: var(--eldritch-accent-cyan);
+	--text-accent-hover: var(--eldritch-accent-green);
+	--text-on-accent: var(--eldritch-text-bright);
+	--text-error: var(--eldritch-accent-red);
+	--text-warning: var(--eldritch-accent-orange);
+	--text-success: var(--eldritch-accent-green);
+
+	/* Interactive Colors */
+	--interactive-normal: var(--eldritch-bg-secondary);
+	--interactive-hover: var(--eldritch-bg-tab-active);
+	--interactive-accent: var(--eldritch-accent-cyan);
+	--interactive-accent-hover: var(--eldritch-accent-green);
+	--interactive-success: var(--eldritch-accent-green);
+
+	/* Scrollbar */
+	--scrollbar-active-thumb-bg: rgba(164, 140, 242, 0.5);
+	--scrollbar-bg: transparent;
+	--scrollbar-thumb-bg: rgba(164, 140, 242, 0.3);
+
+	/* Borders and Dividers */
+	--divider-color: var(--eldritch-border);
+	--divider-color-hover: var(--eldritch-border-secondary);
+
+	/* Tab Colors */
+	--tab-background-active: var(--eldritch-bg-tab-active);
+	--tab-text-color-active: #ebfafa;
+	--tab-text-color-inactive: var(--eldritch-text-secondary);
+	--tab-outline-color: var(--eldritch-border-secondary);
+
+	/* Button Colors */
+	--button-default-bg: var(--eldritch-button-bg);
+	--button-default-color: var(--eldritch-text-bright);
+	--button-default-border-color: transparent;
+	--button-hover-bg: var(--eldritch-button-hover);
+	--button-active-bg: var(--eldritch-accent-cyan);
+
+	/* Input Colors */
+	--input-bg: var(--eldritch-bg-secondary);
+	--input-border-color: var(--eldritch-text-secondary);
+	--input-text-color: var(--eldritch-text-bright);
+	--input-placeholder-color: var(--eldritch-text-secondary);
+
+	/* Selection Colors */
+	--text-selection: var(--eldritch-selection);
+	--text-highlight-bg: var(--eldritch-highlight);
+
+	/* Code Colors */
+	--code-background: var(--eldritch-bg-tertiary);
+	--code-normal: var(--eldritch-text-primary);
+	--code-comment: #7081d0;
+	--code-function: var(--eldritch-accent-cyan);
+	--code-important: var(--eldritch-accent-red);
+	--code-keyword: var(--eldritch-accent-purple);
+	--code-operator: var(--eldritch-accent-green);
+	--code-property: var(--eldritch-accent-green);
+	--code-punctuation: var(--eldritch-text-primary);
+	--code-string: var(--eldritch-accent-green);
+	--code-tag: #37f499;
+	--code-value: var(--eldritch-accent-orange);
+
+	/* Syntax Highlighting */
+	--syntax-highlighting-keyword: var(--eldritch-accent-purple);
+	--syntax-highlighting-string: var(--eldritch-accent-green);
+	--syntax-highlighting-function: var(--eldritch-accent-pink);
+	--syntax-highlighting-comment: #7081d0;
+	--syntax-highlighting-number: var(--eldritch-accent-orange);
+	--syntax-highlighting-operator: var(--eldritch-accent-green);
+	--syntax-highlighting-variable: var(--eldritch-accent-cyan);
+	--syntax-highlighting-class: var(--eldritch-accent-orange);
+	--syntax-highlighting-constant: var(--eldritch-accent-cyan);
+	--syntax-highlighting-tag: var(--eldritch-accent-green);
+	--syntax-highlighting-attribute: var(--eldritch-accent-purple);
+
+	/* Graph Colors */
+	--graph-line: var(--eldritch-border);
+	--graph-node: var(--eldritch-accent-cyan);
+	--graph-node-unresolved: var(--eldritch-text-secondary);
+	--graph-node-focused: var(--eldritch-accent-green);
+	--graph-node-tag: var(--eldritch-accent-purple);
+	--graph-node-attachment: var(--eldritch-accent-orange);
+
+	/* Calendar Colors */
+	--calendar-hover: var(--eldritch-bg-tab-active);
+	--calendar-background-hover: var(--eldritch-bg-secondary);
+	--calendar-week: var(--eldritch-text-secondary);
+	--calendar-today: var(--eldritch-accent-cyan);
+
+	/* Tag Colors */
+	--tag-background: var(--eldritch-bg-secondary);
+	--tag-background-hover: var(--eldritch-bg-tab-active);
+	--tag-border: var(--eldritch-border);
+	--tag-color: var(--eldritch-accent-green);
+
+	/* Checkbox Colors */
+	--checkbox-color: var(--eldritch-accent-cyan);
+	--checkbox-color-hover: var(--eldritch-accent-green);
+	--checkbox-border: var(--eldritch-border);
+	--checkbox-border-hover: var(--eldritch-accent-cyan);
+
+	/* Progress Bar Colors */
+	--progress-bar-bg: var(--eldritch-bg-secondary);
+	--progress-bar-fill: var(--eldritch-accent-cyan);
+
+	/* Modal Colors */
+	--modal-background: var(--eldritch-bg-primary);
+	--modal-border: var(--eldritch-border);
+	--modal-backdrop: rgba(33, 35, 55, 0.8);
+
+	/* Tooltip Colors */
+	--tooltip-bg: var(--eldritch-bg-tertiary);
+	--tooltip-color: var(--eldritch-text-primary);
+	--tooltip-border: var(--eldritch-border);
+
+	/* Menu Colors */
+	--menu-background: var(--eldritch-bg-primary);
+	--menu-border: var(--eldritch-border);
+	--menu-item-background-hover: var(--eldritch-bg-tab-active);
+	--menu-item-background-active: var(--eldritch-selection);
+	--menu-item-color: var(--eldritch-text-primary);
+	--menu-item-color-hover: var(--eldritch-text-bright);
+
+	/* Sidebar Colors */
+	--nav-item-background-hover: var(--eldritch-bg-tab-active);
+	--nav-item-background-active: var(--eldritch-selection);
+	--nav-item-background-selected: var(--eldritch-bg-tab-active);
+	--nav-item-color: var(--eldritch-text-secondary);
+	--nav-item-color-hover: var(--eldritch-text-primary);
+	--nav-item-color-active: var(--eldritch-text-bright);
+	--nav-item-color-selected: var(--eldritch-text-bright);
+	--nav-item-weight-hover: normal;
+	--nav-item-weight-active: normal;
+	--nav-collapse-icon-color: var(--eldritch-text-secondary);
+	--nav-collapse-icon-color-collapsed: var(--eldritch-text-secondary);
+
+	/* Status Bar Colors */
+	--status-bar-background: var(--eldritch-bg-primary);
+	--status-bar-border: var(--eldritch-border-secondary);
+	--status-bar-text: var(--eldritch-text-secondary);
+
+	/* Title Bar Colors */
+	--titlebar-background: var(--eldritch-bg-primary);
+	--titlebar-background-focused: var(--eldritch-bg-primary);
+	--titlebar-border: var(--eldritch-border-secondary);
+	--titlebar-text: #ebfafa;
+	--titlebar-text-weight: normal;
+
+	/* Search Colors */
+	--search-result-background: var(--eldritch-bg-secondary);
+	--search-clear-button-color: var(--eldritch-text-secondary);
+	--search-clear-button-color-hover: var(--eldritch-text-primary);
+	--search-icon-color: var(--eldritch-text-secondary);
+	--search-icon-color-active: var(--eldritch-accent-cyan);
+	--search-text-clear: var(--eldritch-text-secondary);
+
+	/* File Colors */
+	--file-header-font-weight: 600;
+	--file-line-width: 700px;
+	--file-folding-offset: 24px;
+	--file-margins: 44px;
+
+	/* Vault Colors */
+	--vault-name-font-size: var(--font-ui-small);
+	--vault-name-font-weight: 500;
+	--vault-name-color: var(--eldritch-text-secondary);
+
+	/* Workspace Colors */
+	--workspace-background-translucent: rgba(33, 35, 55, 0.85);
+
+	/* Ribbon Colors */
+	--ribbon-background: var(--eldritch-bg-primary);
+	--ribbon-background-collapsed: var(--eldritch-bg-primary);
+
+	/* Icon Colors */
+	--icon-color: var(--eldritch-text-secondary);
+	--icon-color-hover: var(--eldritch-text-primary);
+	--icon-color-active: var(--eldritch-accent-cyan);
+	--icon-color-focused: var(--eldritch-accent-cyan);
+
+	/* Indentation Guide Colors */
+	--indentation-guide-color: rgba(112, 129, 208, 0.32);
+	--indentation-guide-color-active: #9aa5d8;
+
+	/* Embed Colors */
+	--embed-background: var(--eldritch-bg-secondary);
+	--embed-border-left: 2px solid var(--eldritch-accent-cyan);
+	--embed-border-right: none;
+	--embed-border-top: none;
+	--embed-border-bottom: none;
+	--embed-padding: 0 0 0 20px;
+	--embed-font-style: italic;
+
+	/* Blockquote Colors */
+	--blockquote-border: 2px solid var(--eldritch-accent-purple);
+	--blockquote-background-color: rgba(164, 140, 242, 0.1);
+	--blockquote-font-style: italic;
+	--blockquote-color: var(--eldritch-text-primary);
+
+	/* Table Colors */
+	--table-background: var(--eldritch-bg-primary);
+	--table-border-width: 1px;
+	--table-border-color: var(--eldritch-border);
+	--table-header-background: var(--eldritch-bg-secondary);
+	--table-header-background-hover: var(--eldritch-bg-tab-active);
+	--table-header-border-width: 1px;
+	--table-header-border-color: var(--eldritch-border);
+	--table-header-font: inherit;
+	--table-header-font-size: var(--font-smaller);
+	--table-header-font-weight: 600;
+	--table-header-color: var(--eldritch-text-primary);
+	--table-text-color: var(--eldritch-text-primary);
+	--table-row-background-hover: var(--eldritch-bg-secondary);
+	--table-row-alt-background: rgba(112, 129, 208, 0.05);
+	--table-column-max-width: none;
+	--table-column-alt-background: rgba(112, 129, 208, 0.05);
+
+	/* List Colors */
+	--list-indent: 2em;
+	--list-spacing: 0.075em;
+	--list-marker-color: var(--eldritch-accent-green);
+	--list-marker-color-hover: var(--eldritch-accent-cyan);
+	--list-marker-color-collapsed: var(--eldritch-text-secondary);
+
+	/* Heading Colors */
+	--h1-color: var(--eldritch-accent-cyan);
+	--h2-color: var(--eldritch-accent-green);
+	--h3-color: var(--eldritch-accent-purple);
+	--h4-color: var(--eldritch-accent-orange);
+	--h5-color: var(--eldritch-accent-pink);
+	--h6-color: var(--eldritch-accent-yellow);
+	--h1-font: inherit;
+	--h2-font: inherit;
+	--h3-font: inherit;
+	--h4-font: inherit;
+	--h5-font: inherit;
+	--h6-font: inherit;
+	--h1-line-height: 1.2;
+	--h2-line-height: 1.2;
+	--h3-line-height: 1.2;
+	--h4-line-height: 1.2;
+	--h5-line-height: 1.2;
+	--h6-line-height: 1.2;
+	--h1-size: 1.875em;
+	--h2-size: 1.5em;
+	--h3-size: 1.25em;
+	--h4-size: 1.125em;
+	--h5-size: 1em;
+	--h6-size: 1em;
+	--h1-style: normal;
+	--h2-style: normal;
+	--h3-style: normal;
+	--h4-style: normal;
+	--h5-style: normal;
+	--h6-style: normal;
+	--h1-variant: normal;
+	--h2-variant: normal;
+	--h3-variant: normal;
+	--h4-variant: normal;
+	--h5-variant: normal;
+	--h6-variant: normal;
+	--h1-weight: 600;
+	--h2-weight: 600;
+	--h3-weight: 600;
+	--h4-weight: 600;
+	--h5-weight: 600;
+	--h6-weight: 600;
+
+	/* Link Colors */
+	--link-color: var(--eldritch-accent-cyan);
+	--link-color-hover: var(--eldritch-accent-green);
+	--link-external-color: var(--eldritch-accent-pink);
+	--link-external-color-hover: var(--eldritch-accent-red);
+	--link-unresolved-color: var(--eldritch-text-secondary);
+	--link-unresolved-opacity: 0.7;
+	--link-unresolved-filter: none;
+	--link-unresolved-decoration-color: var(--eldritch-text-secondary);
+
+	/* Bold and Italic */
+	--bold-color: var(--eldritch-accent-orange);
+	--bold-weight: 600;
+	--italic-color: var(--eldritch-accent-purple);
+
+	/* Highlight Colors */
+	--highlight-mix-blend-mode: lighten;
+	--highlight-background: rgba(241, 252, 121, 0.4);
+	--highlight-background-hover: rgba(241, 252, 121, 0.6);
+
+	/* Inline Code */
+	--code-size: 0.875em;
+	--code-white-space: pre-wrap;
+
+	/* HR (Horizontal Rule) */
+	--hr-color: var(--eldritch-border);
+	--hr-thickness: 2px;
+
+	/* Radius Variables (keeping original minimal style) */
+	--radius-s: 0px;
+	--radius-m: 0px;
+	--radius-l: 0px;
+	--input-radius: 0px;
+	--tab-radius-active: 0px;
+	--checkbox-radius: 0px;
+	--toggle-radius: 0px;
+	--toggle-thumb-radius: 0px;
+	--slider-thumb-radius: 0px;
+}
+
+/* === COMPONENT-SPECIFIC STYLING === */
+
+/* Workspace Tabs */
+.workspace-tab-header.is-active::before,
+.workspace-tab-header.is-active::after {
+	display: none;
+}
+
+.workspace-tab-header.is-active {
+	background-color: var(--eldritch-bg-tab-active);
+	color: var(--eldritch-text-primary);
+	border-color: var(--eldritch-border-secondary);
+}
+
+.workspace-tab-header {
+	background-color: var(--eldritch-bg-tab-inactive);
+	color: var(--eldritch-text-secondary);
+	border-color: var(--eldritch-border-secondary);
+}
+
+/* SVG Icons */
+svg * {
+	stroke-linecap: square;
+	stroke-linejoin: miter;
+	rx: 0;
+	ry: 0;
+}
+
+/* Menu Styling */
+.menu {
+	padding: var(--size-2-1);
+	background-color: var(--eldritch-bg-primary);
+	border: 1px solid var(--eldritch-border);
+}
+
+.menu-item {
+	padding: var(--size-4-1) var(--size-4-2);
+	color: var(--eldritch-text-primary);
+}
+
+.menu-item:hover {
+	background-color: var(--eldritch-bg-tab-active);
+	color: var(--eldritch-text-bright);
+}
+
+.menu-separator {
+	margin: var(--size-2-1) calc(var(--size-2-1) * -1);
+	border-color: var(--eldritch-border);
+}
+
+/* Syntax Highlighting for Code Blocks */
+.cm-s-obsidian span.cm-comment {
+	color: #7081d0;
+	font-style: italic;
+}
+
+.cm-s-obsidian span.cm-string {
+	color: var(--eldritch-accent-green);
+}
+
+.cm-s-obsidian span.cm-number {
+	color: var(--eldritch-accent-orange);
+}
+
+.cm-s-obsidian span.cm-keyword {
+	color: var(--eldritch-accent-purple);
+	font-style: italic;
+}
+
+.cm-s-obsidian span.cm-operator {
+	color: var(--eldritch-accent-green);
+}
+
+.cm-s-obsidian span.cm-variable {
+	color: var(--eldritch-accent-cyan);
+}
+
+.cm-s-obsidian span.cm-variable-2 {
+	color: var(--eldritch-accent-pink);
+}
+
+.cm-s-obsidian span.cm-def {
+	color: var(--eldritch-accent-cyan);
+	font-style: italic;
+}
+
+.cm-s-obsidian span.cm-bracket {
+	color: var(--eldritch-text-primary);
+}
+
+.cm-s-obsidian span.cm-tag {
+	color: var(--eldritch-accent-green);
+}
+
+.cm-s-obsidian span.cm-attribute {
+	color: var(--eldritch-accent-purple);
+	font-style: italic;
+}
+
+.cm-s-obsidian span.cm-atom {
+	color: var(--eldritch-accent-cyan);
+}
+
+.cm-s-obsidian span.cm-quote {
+	color: #7081d0;
+	font-style: italic;
+}
+
+/* Editor Cursor */
+.cm-cursor {
+	border-left-color: var(--eldritch-accent-green);
+}
+
+/* Selection */
+.cm-s-obsidian .CodeMirror-selected {
+	background: var(--eldritch-selection);
+}
+
+.cm-s-obsidian .CodeMirror-selectedtext {
+	background: transparent;
+}
+
+/* Line Numbers */
+.cm-s-obsidian .CodeMirror-linenumber {
+	color: var(--eldritch-text-muted);
+}
+
+.cm-s-obsidian .CodeMirror-activeline .CodeMirror-linenumber {
+	color: #ebfafa;
+}
+
+/* Active Line */
+.cm-s-obsidian .CodeMirror-activeline-background {
+	background: rgba(55, 244, 153, 0.08);
+}
+
+/* Search Highlighting */
+.cm-s-obsidian .cm-searching {
+	background-color: var(--eldritch-highlight);
+}
+
+/* Fold Markers */
+.cm-s-obsidian .CodeMirror-foldmarker {
+	color: var(--eldritch-accent-cyan);
+	background-color: var(--eldritch-bg-secondary);
+	border: 1px solid var(--eldritch-border);
+}
+
+/* Gutters */
+.cm-s-obsidian .CodeMirror-gutters {
+	background-color: var(--eldritch-bg-primary);
+	border-right: 1px solid var(--eldritch-border);
+}
+
+/* Matching Brackets */
+.cm-s-obsidian .CodeMirror-matchingbracket {
+	background-color: rgba(55, 244, 153, 0.3);
+	color: var(--eldritch-text-bright) !important;
+}
+
+.cm-s-obsidian .CodeMirror-nonmatchingbracket {
+	background-color: rgba(241, 108, 117, 0.3);
+	color: var(--eldritch-text-bright) !important;
+}
+
+/* Callout Styling */
+.callout {
+	background-color: var(--eldritch-bg-secondary);
+	border-left: 4px solid var(--eldritch-accent-purple);
+}
+
+.callout[data-callout="info"] {
+	border-left-color: var(--eldritch-accent-cyan);
+}
+
+.callout[data-callout="warning"] {
+	border-left-color: var(--eldritch-accent-orange);
+}
+
+.callout[data-callout="danger"],
+.callout[data-callout="error"] {
+	border-left-color: var(--eldritch-accent-red);
+}
+
+.callout[data-callout="success"],
+.callout[data-callout="tip"] {
+	border-left-color: var(--eldritch-accent-green);
+}
+
+/* Canvas Styling */
+.canvas-node {
+	background-color: var(--eldritch-bg-secondary);
+	border-color: var(--eldritch-border);
+}
+
+.canvas-node.is-focused {
+	border-color: var(--eldritch-accent-cyan);
+	box-shadow: 0 0 0 2px rgba(4, 209, 249, 0.3);
+}
+
+.canvas-edge {
+	stroke: var(--eldritch-accent-purple);
+}
+
+/* Frontmatter Styling */
+.frontmatter-container {
+	background-color: var(--eldritch-bg-secondary);
+	border-color: var(--eldritch-border);
+}
+
+.frontmatter-container .frontmatter-container-header {
+	color: var(--eldritch-text-secondary);
+}
